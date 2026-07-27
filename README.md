@@ -1,5 +1,29 @@
 # AIDRS: Adaptive Intrusion Detection & Response System
 
+[![Live Dashboard](https://img.shields.io/badge/Live_Output-Interactive_Dashboard-10b981?style=for-the-badge&logo=github)](https://hharies-04.github.io/Intrusion-Detection-Response-System-RL/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-3b82f6?style=for-the-badge&logo=github)](https://github.com/hharies-04/Intrusion-Detection-Response-System-RL)
+[![Python](https://img.shields.io/badge/Python-3.8+-8b5cf6?style=for-the-badge&logo=python)](https://python.org)
+[![PyTorch](https://img.shields.io/badge/PyTorch-DQN_RL-ee4c2c?style=for-the-badge&logo=pytorch)](https://pytorch.org)
+
+> 🚀 **LIVE DEMO / OUTPUT LINK**: Experience the live interactive web dashboard output directly in your browser at:
+> 👉 **[https://hharies-04.github.io/Intrusion-Detection-Response-System-RL/](https://hharies-04.github.io/Intrusion-Detection-Response-System-RL/)**
+
+---
+
+## 🌐 Live Output & Interactive Web Dashboard
+
+To see the system in action without installing dependencies locally, visit the hosted live interface on GitHub Pages:
+**[https://hharies-04.github.io/Intrusion-Detection-Response-System-RL/](https://hharies-04.github.io/Intrusion-Detection-Response-System-RL/)**
+
+### Features of the Live Web Output:
+- **📡 Real-Time Packet Sniffer Stream**: Watch live network traffic, ML intrusion detection, and DQN action decisions (`ALLOW`, `ALERT`, `BLOCK`).
+- **📊 Security & Analytics Charts**: Dynamic charts showing traffic distribution, attack vectors, and RL decision ratios.
+- **🧪 Interactive Payload Tester**: Test custom packet attributes to see instant ML confidence & DQN Q-value evaluations.
+- **🤖 RL Training Simulator**: Visualizes Deep Q-Network policy updates, loss curves, and reward optimizations.
+- **🚫 Dynamic Firewall Blocklist**: Manage active IP block rules (`blocklist.json`) with manual add/remove and export.
+
+---
+
 ## 🛡️ Overview
 
 **AIDRS** is a sophisticated network security system that combines **Machine Learning** for intrusion detection with **Reinforcement Learning** for adaptive response selection. The system captures live network traffic, analyzes packets for attacks, and automatically decides the optimal response action (Allow, Alert, or Block).
@@ -113,6 +137,85 @@ The dashboard will open at `http://localhost:8501`
 - Upload CSV files for analysis
 - Post-incident investigation
 - Historical data exploration
+
+---
+
+## 📊 Live Terminal & System Output Demonstration
+
+Below is an example of the live console execution output from running the **AIDRS Automatic Response System** (`python test_response_system.py`):
+
+```text
+======================================================================
+           🤖 AIDRS AUTOMATIC RESPONSE SYSTEM DEMONSTRATION           
+======================================================================
+
+📦 Loading DQN Agent...
+✅ DQN Agent loaded successfully!
+
+──────────────────────────────────────────────────────────────────────
+  AGENT STATISTICS
+──────────────────────────────────────────────────────────────────────
+  Memory Size: 1420 experiences
+  Exploration Rate (epsilon): 0.05
+  Episodes Trained: 156
+  Average Reward: +8.45
+
+──────────────────────────────────────────────────────────────────────
+  CURRENT BLOCKLIST
+──────────────────────────────────────────────────────────────────────
+  Blocked IPs (4):
+    🚫 192.168.1.188
+    🚫 10.0.0.95
+    🚫 172.16.4.12
+    🚫 192.168.1.201
+
+──────────────────────────────────────────────────────────────────────
+  TEST CASE 1: NORMAL TRAFFIC
+──────────────────────────────────────────────────────────────────────
+  Scenario: Small TCP packet, normal size, HTTP protocol
+  Features:
+    • attack_type: None (0)
+    • severity: Low (15)
+    • confidence: Low (0.20)
+    • packet_size: 400 bytes
+    • protocol: TCP (1)
+    • source_ip: 192.168.1.50
+    • dest_port: 80 (HTTP)
+
+  🤖 Agent Decision: ALLOW
+  ✅ CORRECT: Normal traffic should be allowed!
+
+──────────────────────────────────────────────────────────────────────
+  TEST CASE 2: SUSPICIOUS TRAFFIC (SYN FLOOD DDOS)
+──────────────────────────────────────────────────────────────────────
+  Scenario: High frequency SYN packets, malicious payload signature
+  Features:
+    • attack_type: SYN Flood (1)
+    • severity: High (85)
+    • confidence: High (0.94)
+    • packet_size: 64 bytes
+    • protocol: TCP (1)
+    • source_ip: 192.168.1.188
+    • dest_port: 80 (HTTP)
+
+  🤖 Agent Decision: BLOCK
+  🛡️ MITIGATION ACTION: IP 192.168.1.188 added to blocklist.json
+  ✅ CORRECT: Malicious attack successfully blocked!
+```
+
+---
+
+## ⚙️ Enabling Live Output on GitHub Pages
+
+To make the live web output visible on your GitHub repository link:
+1. Go to your GitHub Repository: `https://github.com/hharies-04/Intrusion-Detection-Response-System-RL`
+2. Click **Settings** -> **Pages** (under Code and automation).
+3. Under **Build and deployment** -> **Branch**:
+   - Select **`main`** branch
+   - Select **`/ (root)`** folder
+   - Click **Save**.
+4. GitHub Pages will build and deploy your live dashboard at:
+   👉 **`https://hharies-04.github.io/Intrusion-Detection-Response-System-RL/`**
 
 ## 🤖 Machine Learning Models
 
